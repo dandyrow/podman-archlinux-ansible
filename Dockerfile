@@ -19,7 +19,8 @@ FROM archlinux:latest
 
 RUN pacman -Syu --noconfirm \
     && pacman -S --noconfirm \
-    ansible
+    ansible \
+    sudo
 
 RUN mkdir -p /etc/ansible \
     && echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
